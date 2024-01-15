@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import prompts from "prompts";
 import { bold } from "kleur/colors";
 import { createRequire } from "module";
