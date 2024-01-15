@@ -49,7 +49,7 @@ const __dirname = resolve(dirname(fileURLToPath(import.meta.url)));
 
    const { projectName, projectAuthor, projectDesc, projectLicense} = await prompts(startingQuestions);
 
-   const pkg = structuredClone(require(resolve(__dirname, "../../","seed", "./package.json")));
+   const pkg = structuredClone(require(resolve(__dirname, "../","seed", "./package.json")));
 
    pkg.name= projectName;
    pkg.author= projectAuthor;
