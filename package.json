@@ -1,13 +1,13 @@
 {
   "name": "@cfvergara/create-node-ts-esbuild-project",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A project initializer for NodeJS apps using esbuild",
   "main": "dist/index.js",
   "type": "module",
   "engines": {
     "node": ">=19.0"
   },
-  "bin":"scripts/deploy-new.js",
+  "bin": "scripts/deploy-new.js",
   "engineStrict": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
