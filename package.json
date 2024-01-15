@@ -1,0 +1,29 @@
+{
+  "name": "@cfvergara/create-node-ts-esbuild-project",
+  "version": "0.0.1",
+  "description": "A project initializer for NodeJS apps using esbuild",
+  "main": "dist/index.js",
+  "type":"module",
+  "engines": {
+    "node": ">=19.0"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ts": "tsc",
+    "build": "node scripts/build.js",
+    "watch": "node scripts/watch.js",
+    "serve":"http-server -p 4321",
+    "develop":"concurrently -k \"npm:watch\" \"npm:serve\"",
+    "@cfvergara/create-node-ts-esbuild-project":"node scripts/deploy-new.js"
+  },
+  "author": "Carlos Vergara <cfvergara@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
+  "devDependencies": {
+    "@tsconfig/node19": "^19.1.2",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.19.11",
+    "http-server": "^14.1.1",
+    "typescript": "^5.3.3"
+  }
+}
