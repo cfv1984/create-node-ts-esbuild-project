@@ -13,7 +13,7 @@ const require = createRequire(new URL(import.meta.url));
 
 const out = console.log.bind(console, bold("[create-node-ts-esbuild-project]"));
 
-const __dirname = resolve(dirname(fileURLToPath(import.meta.url)));
+const moduleDirname = resolve(dirname(fileURLToPath(import.meta.url)));
 
 (async () => {
   out("Creating new NodeJS TS (esbuild) project");
@@ -49,14 +49,14 @@ const __dirname = resolve(dirname(fileURLToPath(import.meta.url)));
 
    const { projectName, projectAuthor, projectDesc, projectLicense} = await prompts(startingQuestions);
 
-   const pkg = structuredClone(require(resolve(__dirname, "../","seed", "./package.json")));
+   const pkg = structuredClone(require(resolve(moduleDirname, "seed", "./package.json")));
 
    pkg.name= projectName;
    pkg.author= projectAuthor;
    pkg.description= projectDesc||"";
    pkg.license= projectLicense||"MIT";
 
-  await copy(resolve(__dirname, "seed"), cwd());
+  await copy(resolve(moduleDirname, "seed"), cwd());
 
   await promises.writeFile(resolve(cwd(), "package.json"), JSON.stringify(pkg, null, "  "));
 
