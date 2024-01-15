@@ -1,0 +1,28 @@
+{
+  "name": "<PROJECT_NAME>",
+  "version": "0.0.1",
+  "description": "<PROJECT_DESC>",
+  "main": "dist/index.js",
+  "type":"module",
+  "scripts": {
+    "ts": "tsc",
+    "test": "ts-node -r tsconfig-paths/register node_modules/tape/bin/tape tests/index.ts",
+    "watch": "node scripts/watch.js",
+    "build": "node scripts/build.js",
+    "start": "node dist/index.js",
+    "serve": "http-server ./dist -p 4321",
+    "develop": "ts-node -r tsconfig-paths/register node_modules/tape/bin/tape tests/index.ts"
+  },
+  "keywords": [],
+  "author": "<PROJECT_AUTHOR>",
+  "license": "<PROJECT_LICENSE>",
+  "devDependencies": {
+    "@types/tape": "5.6.4",
+    "concurrently": "^8.2.2",
+    "esbuild": "0.19.11",
+    "tape": "^5.7.3",
+    "ts-node": "10.9.2",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "^5.3.3"
+  }
+}
