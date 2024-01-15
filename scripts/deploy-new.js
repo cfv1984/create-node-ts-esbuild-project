@@ -1,7 +1,7 @@
 import prompts from "prompts";
 import { bold } from "kleur/colors";
 import { createRequire } from "module";
-import { resolve } from "path";
+import { resolve, dirname } from "path";
 import { existsSync, promises } from "fs";
 import { EOL } from "os";
 import { copy } from "fs-extra";
