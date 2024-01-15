@@ -4,15 +4,15 @@ import { createRequire } from "module";
 import { resolve } from "path";
 import { existsSync, promises } from "fs";
 import { EOL } from "os";
-import { } from "fs-extra";
-
+import { copy } from "fs-extra";
+import { fileURLToPath } from 'node:url';
 const { cwd } = process;
 
 const require = createRequire(new URL(import.meta.url));
 
 const out = console.log.bind(console, bold("[create-node-ts-esbuild-project]"));
 
-
+const __dirname = resolve(dirname(fileURLToPath(import.meta.url)));
 
 (async () => {
   out("Creating new NodeJS TS (esbuild) project");
@@ -46,18 +46,20 @@ const out = console.log.bind(console, bold("[create-node-ts-esbuild-project]"));
 
 
 
-  // const { projectName, projectAuthor, projectDesc, projectLicense} = await prompts(startingQuestions);
+   const { projectName, projectAuthor, projectDesc, projectLicense} = await prompts(startingQuestions);
 
-  // const pkg = structuredClone(require(resolve(cwd(), "./package.json")));
+   const pkg = structuredClone(require(resolve(cwd(), "./package.json")));
 
-  // pkg.name= projectName;
-  // pkg.author= projectAuthor;
-  // pkg.description= projectDesc||"";
-  // pkg.license= projectLicense||"MIT";
+   pkg.name= projectName;
+   pkg.author= projectAuthor;
+   pkg.description= projectDesc||"";
+   pkg.license= projectLicense||"MIT";
 
-  // out(JSON.stringify(pkg, null, "  "))
+  await copy(resolve(__dirname, "seed"), cwd());
 
-  out(await makeFilesList())
+  await promises.writeFile(resolve(cwd(), "package.json"), JSON.stringify(pkg, null, "  "));
+
+  out("KTXBAI")
 
 })();
 
