@@ -6,8 +6,8 @@
   "scripts": {
     "ts": "tsc",
     "test": "ts-node -r tsconfig-paths/register node_modules/tape/bin/tape tests/index.ts",
-    "watch": "node scripts/watch.js",
-    "build": "node scripts/build.js",
+    "watch": "node scripts/watch.mjs",
+    "build": "node scripts/build.mjs",
     "start": "node dist/index.js",
     "serve": "http-server ./dist -p 4321",
     "develop": "ts-node -r tsconfig-paths/register node_modules/tape/bin/tape tests/index.ts"
