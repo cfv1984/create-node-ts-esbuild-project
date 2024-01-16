@@ -12,8 +12,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts": "tsc",
-    "build": "node scripts/build.js",
-    "watch": "node scripts/watch.js",
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/watch.mjs",
     "serve": "http-server -p 4321",
     "develop": "concurrently -k \"npm:watch\" \"npm:serve\"",
     "@cfvergara/create-node-ts-esbuild-project": "node scripts/deploy-new.js"

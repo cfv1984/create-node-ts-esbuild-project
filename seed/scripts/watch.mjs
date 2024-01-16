@@ -1,5 +1,5 @@
 import { context } from "esbuild";
-import config from "./config.js";
+import config from "./config.mjs";
 
 const out = console.log.bind(console,"[esbuild:build]");
 

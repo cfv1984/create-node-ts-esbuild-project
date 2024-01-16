@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "<PROJECT_DESC>",
   "main": "dist/index.js",
-  "type":"module",
   "scripts": {
     "ts": "tsc",
     "test": "ts-node -r tsconfig-paths/register node_modules/tape/bin/tape tests/index.ts",
