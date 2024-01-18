@@ -9,8 +9,8 @@
     "watch": "node scripts/watch.mjs",
     "build": "node scripts/build.mjs",
     "start": "node dist/index.js",
-    "serve": "http-server ./dist -p 4321",
-    "develop": "ts-node -r tsconfig-paths/register node_modules/tape/bin/tape tests/index.ts"
+    "serve": "http-server ./dist -p 5678",
+    "develop": "concurrently \"npm:watch\" \"npm:serve\" \"npm run start -- --watch\""
   },
   "keywords": [],
   "author": "<PROJECT_AUTHOR>",

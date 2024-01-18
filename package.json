@@ -14,8 +14,9 @@
     "ts": "tsc",
     "build": "node scripts/build.mjs",
     "watch": "node scripts/watch.mjs",
-    "serve": "http-server -p 4321",
-    "develop": "concurrently -k \"npm:watch\" \"npm:serve\"",
+    "serve": "http-server -p 5678",
+    "develop": "npm run build && npm runconcurrently -k \"npm:watch\" \"npm:serve\" \"npm run start -- --watch\"",
+    "start":"node dist/index.js",
     "@cfvergara/create-node-ts-esbuild-project": "node scripts/deploy-new.js"
   },
   "author": "Carlos Vergara <cfvergara@gmail.com>",
